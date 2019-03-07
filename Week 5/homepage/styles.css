@@ -1,0 +1,153 @@
+/*
+    Stylesheet for CS50 Week 5 Homework
+    Kyle Chatman 2019
+
+    backgrounds are from www.subtlepatterns.com
+    All photos are my own
+*/
+
+.index {
+    background-image: url("/bgs/swirl_pattern.png");
+    background-color: #F2F2F2;
+    color: Black;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.index a {
+    color: Black;
+    text-decoration: underline;
+}
+
+.personal {
+    background-image: url("/bgs/topography.png");
+    background-color: #FCFCFC;
+    Color: #353535;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.personal a {
+    Color: #353535;
+    text-decoration: underline;
+}
+
+.SE {
+    background-image: url("/bgs/concrete_seamless.png");
+    background-color: #EEEEEE;
+    Color: #292929;
+    font-family: "Courier New", "Courier", monospace;
+}
+
+.SE a {
+    Color: #292929;
+    text-decoration: underline;
+}
+
+.CS {
+    background-image: url("/bgs/tic-tac-toe.png");
+    background-color: #FCFCFC;
+    Color: #191919;
+    font-family: "Courier New", "Courier", monospace;
+}
+
+.CS a {
+    Color: #191919;
+    text-decoration: underline;
+}
+
+.header {
+  min-height: 100px;
+  height: 100%;
+}
+
+
+.nav {
+    border-style: solid none solid none;
+
+    font-size: 100%;
+    padding: 25px 0;
+}
+
+.indexstripe {
+    background-color: #FED768;
+    background-image: url("/bgs/halftone-yellow.png");
+    color: Black;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.indexstripe a {
+    color: Black;
+    text-decoration: none;
+}
+
+.personalstripe {
+    background-color: #353535;
+    background-image: url("/bgs/prism.png");
+    color: #FCFCFC;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.personalstripe a {
+    color:  #FCFCFC;
+    text-decoration: none;
+}
+
+.SEstripe {
+    background-color: #292929;
+    background-image: url("/bgs/dark-honeycomb.png");
+    color: #EEEEEE;
+    font-family: "Courier New", "Courier", monospace;
+}
+
+.SEstripe a {
+    color:  #EEEEEE;
+    text-decoration: none;
+}
+
+.CSstripe {
+    background-color: #191919;
+    background-image: url("/bgs/dark-triangles.png");
+    color: #FCFCFC;
+    font-family: "Courier New", "Courier", monospace;
+}
+
+.CSstripe a {
+    color:  #FCFCFC;
+    text-decoration: none;
+}
+
+.main {
+  min-height: 100px;
+  padding-bottom: 75px;
+}
+
+.footer {
+    position: fixed;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    border-style: solid none none none;
+}
+
+/*a {
+    text-decoration: none;
+}*/
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.avoidwrap {
+    display:inline-block; }
