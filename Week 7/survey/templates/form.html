@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<!--
+CS50 Problem Set 7
+survey
+get input from users and display in a table
+By me: in application.py: routes for post_form and get_sheet, form.html, error.html,sheet.html, styles.css
+  remainder is distribution code
+
+by: Kyle Chatman
+on: 190312
+-->
+
+    <h1 class="mb-3">Ask me the questions, bridgekeeper. I am not afraid.</h1>
+
+    <div class="row">
+        <div class="col-sm-auto">
+            <form action="/form" method="post" class="needs-validation" novalidate>
+                <div class="form-group form-row no-left-pad">
+                    <label for="name">What... is your name?</label>
+                    <input autocomplete="off" autofocus class="form-control" name="name" ID="name" placeholder="Sir Lancelot of Camelot" type="text" required>
+                    <div class="invalid-feedback">
+                    Answer me these questions three, ere the other side ye see.
+                    </div>
+                </div>
+
+                <div class="form-row no-left-pad">
+                What... is your quest?
+                </div>
+                <div class="form-check form-row bot-pad">
+                    <input class="form-check-input" id="quest" name="quest" type="checkbox" value="To Seek the Grail!" required>
+                    <label class="form-check-label" for="quest">
+                        To seek the Holy Grail.
+                    </label>
+                </div>
+                <div class="form-check form-row no-left-pad bot-pad">
+                    <label for="color">What... is your favorite color?</label>
+                    <select class="form-control" id="color" name="color" size=6 required>
+                    <option value="Red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Violet">Violet</option>
+                </select>
+                </div>
+                <div class="form-check form-row no-left-pad bot-pad">
+                    <button class="btn btn-primary" type="submit">Right. Off you go.</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-auto">
+            <img src="/static/Bridge_of_Death.jpg" width=400 alt="Bridge of Death">
+        </div>
+    </div>
+    <script>
+
+    // Default Bootstrap validation (added some of my own below)
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+
+    // more validation done another way myself
+    document.querySelector('form').onsubmit = function() {
+        if (!document.querySelector('#name').value) {
+            alert('What... is your name?');
+            return false;
+        }
+        else if (!document.querySelector('#quest').checked) {
+            alert('What... is your quest?');
+            return false;
+        }
+        else if (!document.querySelector('#color').value) {
+            alert('What... is your favorite color?');
+            return false;
+        }
+        return true;
+    };
+
+    </script>
+
+{% endblock %}

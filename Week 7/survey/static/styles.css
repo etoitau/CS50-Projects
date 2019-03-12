@@ -1,0 +1,11 @@
+.no-left-pad{
+   padding-left:0px;
+}
+
+.bot-pad{
+    padding-bottom:10px;
+}
+
+th {
+    font-size: 1.33em;
+}

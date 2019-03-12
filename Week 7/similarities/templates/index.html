@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<!--
+CS50 Problem Set 7
+similarities
+Form to get files and select options
+helpers.py and index.html by me, rest is distribution code
+
+by: Kyle Chatman
+on: 190312
+-->
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="POST">
+            <div class="form-group row">
+                <div class="col-sm-auto"><label for="file1"><strong>File A!</strong></label></div>
+                <div class="col-sm-auto"><input type="file" class="form-control-file" name="file1" ID="file1"></div>
+                <div class="col-sm-auto"><label for="file2"><strong>File B!</strong></label></div>
+                <div class="col-sm-auto"><input type="file" class="form-control-file" name="file2" ID="file2"></div>
+            </div>
+            Looking for:
+            <div class="form-group row">
+                <div class="col-sm-auto">
+                <select class="form-control" id="algorithmselect" name="algorithm">
+                    <option disabled selected value="">Pick One</option>
+                    <option value="lines">Lines</option>
+                    <option value="sentences">Sentences</option>
+                    <option value="substrings">Substrings</option>
+                </select>
+                <input class="form-control form-control-sm" min="1" name="length" placeholder="length if substring" type="number">
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-dark btn-lg" type="submit">A vs B,<br>Go!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

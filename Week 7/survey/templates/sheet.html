@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<!--
+CS50 Problem Set 7
+survey
+get input from users and display in a table
+By me: in application.py: routes for post_form and get_sheet, form.html, error.html,sheet.html, styles.css
+  remainder is distribution code
+
+by: Kyle Chatman
+on: 190312
+-->
+
+    <h1 class="mb-3">Knights of the Round Table</h1>
+    <table class="table table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">
+            Name
+        </th>
+        <th scope="col">
+            Quest
+        </th>
+        <th scope="col">
+            Favorite Color
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for knight in knights %}
+        <tr>
+            <td>{{ knight['name'] }}</td>
+            <td>{{ knight['quest'] }}</td>
+            <td>{{ knight['color'] }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
