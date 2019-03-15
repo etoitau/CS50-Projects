@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+    <h3>Transaction History</h3>
+    <table class="table table-sm center" style="width: auto">
+    <thead class="table-primary">
+    <tr>
+        <th scope="col">
+            Symbol
+        </th>
+        <th scope="col">
+            Shares
+        </th>
+        <th scope="col">
+            Price
+        </th>
+        <th scope="col">
+            Value
+        </th>
+        <th scope="col">
+            Timestamp
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for item in transhistory %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] | usd }}</td>
+                <td>{{ item[3] | usd }}</td>
+                <td>{{ item[4] }}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Net Spent: </td>
+                <td>{{ netvalue | usd }}</td>
+                <td></td>
+            </tr>
+    </tbody>
+    </table>
+{% endblock %}

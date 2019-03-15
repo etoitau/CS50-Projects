@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Ticker Sybmol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Get Quote</button>
+    </form>
+    <br>
+    <table class="table table-sm center" style="width: auto">
+    <thead class="table-primary">
+    <tr>
+        <th scope="col">
+            Symbol
+        </th>
+        <th scope="col">
+            Company Name
+        </th>
+        <th scope="col">
+            Latest Price
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ jquote.symbol }}</td>
+            <td>{{ jquote.name }}</td>
+            <td>{{ jquote.price | usd }}</td>
+        </tr>
+    </tbody>
+    </table>
+{% endblock %}

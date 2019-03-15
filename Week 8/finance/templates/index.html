@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h3>Portfolio</h3>
+    <table class="table table-sm center" style="width: auto">
+    <thead class="table-primary">
+    <tr>
+        <th scope="col">
+            Symbol
+        </th>
+        <th scope="col">
+            Shares
+        </th>
+        <th scope="col">
+            Latest Price
+        </th>
+        <th scope="col">
+            Value
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for item in portfolio %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ '%d' % item[1] }}</td>
+                <td>{{ item[2] | usd }}</td>
+                <td>{{ item[3] | usd }}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ stockvalue | usd }}</td>
+            </tr>
+    </tbody>
+    </table>
+    <p>
+    Cash = {{ cash | usd }}
+    <br>
+    {% set total = cash + stockvalue %}
+    Total = {{ total | usd }}
+    </p>
+    <p><a href="/change">Change password?</a></p>
+{% endblock %}
